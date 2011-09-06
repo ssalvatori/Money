@@ -1,0 +1,14 @@
+#menu {
+    text-align: right;
+}
+#menu li {
+    display: inline;
+    list-style: none;
+    text-transform: uppercase;
+}
+#menu a {
+    text-decoration: none;
+}
+#menu a:hover {
+    text-decoration: underline;
+}

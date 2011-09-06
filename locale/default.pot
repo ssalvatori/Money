@@ -1,0 +1,698 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2011-08-05 21:03-0400\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: /controllers/accounts_controller.php:13;35
+msgid "Invalid account"
+msgstr ""
+
+#: /controllers/accounts_controller.php:23;40
+msgid "The account has been saved"
+msgstr ""
+
+#: /controllers/accounts_controller.php:26;43
+msgid "The account could not be saved. Please, try again."
+msgstr ""
+
+#: /controllers/accounts_controller.php:55
+msgid "Invalid id for account"
+msgstr ""
+
+#: /controllers/accounts_controller.php:59
+msgid "Account deleted"
+msgstr ""
+
+#: /controllers/accounts_controller.php:62
+msgid "Account was not deleted"
+msgstr ""
+
+#: /controllers/banks_controller.php:13;33
+msgid "Invalid bank"
+msgstr ""
+
+#: /controllers/banks_controller.php:23;38
+msgid "The bank has been saved"
+msgstr ""
+
+#: /controllers/banks_controller.php:26;41
+msgid "The bank could not be saved. Please, try again."
+msgstr ""
+
+#: /controllers/banks_controller.php:51
+msgid "Invalid id for bank"
+msgstr ""
+
+#: /controllers/banks_controller.php:55
+msgid "Bank deleted"
+msgstr ""
+
+#: /controllers/banks_controller.php:58
+msgid "Bank was not deleted"
+msgstr ""
+
+#: /controllers/categories_controller.php:13;33
+msgid "Invalid category"
+msgstr ""
+
+#: /controllers/categories_controller.php:23;38
+msgid "The category has been saved"
+msgstr ""
+
+#: /controllers/categories_controller.php:26;41
+msgid "The category could not be saved. Please, try again."
+msgstr ""
+
+#: /controllers/categories_controller.php:51
+msgid "Invalid id for category"
+msgstr ""
+
+#: /controllers/categories_controller.php:55
+msgid "Category deleted"
+msgstr ""
+
+#: /controllers/categories_controller.php:58
+msgid "Category was not deleted"
+msgstr ""
+
+#: /controllers/transactions_controller.php:13;36
+msgid "Invalid transaction"
+msgstr ""
+
+#: /controllers/transactions_controller.php:23;41
+msgid "The transaction has been saved"
+msgstr ""
+
+#: /controllers/transactions_controller.php:26;44
+msgid "The transaction could not be saved. Please, try again."
+msgstr ""
+
+#: /controllers/transactions_controller.php:57
+msgid "Invalid id for transaction"
+msgstr ""
+
+#: /controllers/transactions_controller.php:61
+msgid "Transaction deleted"
+msgstr ""
+
+#: /controllers/transactions_controller.php:64
+msgid "Transaction was not deleted"
+msgstr ""
+
+#: /controllers/types_controller.php:13;33
+msgid "Invalid type"
+msgstr ""
+
+#: /controllers/types_controller.php:23;38
+msgid "The type has been saved"
+msgstr ""
+
+#: /controllers/types_controller.php:26;41
+msgid "The type could not be saved. Please, try again."
+msgstr ""
+
+#: /controllers/types_controller.php:51
+msgid "Invalid id for type"
+msgstr ""
+
+#: /controllers/types_controller.php:55
+msgid "Type deleted"
+msgstr ""
+
+#: /controllers/types_controller.php:58
+msgid "Type was not deleted"
+msgstr ""
+
+#: /controllers/users_controller.php:13;33
+msgid "Invalid user"
+msgstr ""
+
+#: /controllers/users_controller.php:23;38
+msgid "The user has been saved"
+msgstr ""
+
+#: /controllers/users_controller.php:26;41
+msgid "The user could not be saved. Please, try again."
+msgstr ""
+
+#: /controllers/users_controller.php:51
+msgid "Invalid id for user"
+msgstr ""
+
+#: /controllers/users_controller.php:55
+msgid "User deleted"
+msgstr ""
+
+#: /controllers/users_controller.php:58
+msgid "User was not deleted"
+msgstr ""
+
+#: /views/accounts/add.ctp:4
+msgid "Add Account"
+msgstr ""
+
+#: /views/accounts/add.ctp:12
+#: /views/accounts/edit.ctp:13
+#: /views/banks/add.ctp:9
+#: /views/banks/edit.ctp:10
+#: /views/categories/add.ctp:10
+#: /views/categories/edit.ctp:11
+#: /views/transactions/add.ctp:13
+#: /views/transactions/edit.ctp:14
+#: /views/types/add.ctp:9
+#: /views/types/edit.ctp:10
+#: /views/users/add.ctp:11
+#: /views/users/edit.ctp:12
+msgid "Submit"
+msgstr ""
+
+#: /views/accounts/add.ctp:15
+#: /views/accounts/edit.ctp:16
+#: /views/accounts/index.ctp:12;55
+#: /views/accounts/view.ctp:42;67
+#: /views/banks/add.ctp:12
+#: /views/banks/edit.ctp:13
+#: /views/banks/index.ctp:9;47
+#: /views/banks/view.ctp:27;48
+#: /views/categories/add.ctp:13
+#: /views/categories/edit.ctp:14
+#: /views/categories/index.ctp:10;49
+#: /views/categories/view.ctp:32;54
+#: /views/transactions/add.ctp:16
+#: /views/transactions/edit.ctp:17
+#: /views/transactions/index.ctp:13;59
+#: /views/transactions/view.ctp:47
+#: /views/types/add.ctp:12
+#: /views/types/edit.ctp:13
+#: /views/types/index.ctp:9;47
+#: /views/types/view.ctp:27
+#: /views/users/add.ctp:14
+#: /views/users/edit.ctp:15
+#: /views/users/index.ctp:11;51
+#: /views/users/view.ctp:37;59
+msgid "Actions"
+msgstr ""
+
+#: /views/accounts/add.ctp:18
+#: /views/accounts/edit.ctp:20
+#: /views/accounts/view.ctp:46
+#: /views/banks/add.ctp:16
+#: /views/banks/edit.ctp:18
+#: /views/banks/index.ctp:50
+#: /views/banks/view.ctp:33
+#: /views/transactions/add.ctp:20
+#: /views/transactions/edit.ctp:22
+#: /views/transactions/index.ctp:62
+#: /views/transactions/view.ctp:53
+#: /views/users/add.ctp:18
+#: /views/users/edit.ctp:20
+#: /views/users/index.ctp:54
+#: /views/users/view.ctp:43
+msgid "List Accounts"
+msgstr ""
+
+#: /views/accounts/add.ctp:19
+#: /views/accounts/edit.ctp:21
+#: /views/accounts/index.ctp:58
+#: /views/accounts/view.ctp:48
+#: /views/banks/add.ctp:15
+#: /views/banks/edit.ctp:17
+#: /views/banks/view.ctp:31
+msgid "List Banks"
+msgstr ""
+
+#: /views/accounts/add.ctp:20
+#: /views/accounts/edit.ctp:22
+#: /views/accounts/index.ctp:59
+#: /views/accounts/view.ctp:49
+#: /views/banks/index.ctp:49
+#: /views/banks/view.ctp:32
+msgid "New Bank"
+msgstr ""
+
+#: /views/accounts/add.ctp:21
+#: /views/accounts/edit.ctp:23
+#: /views/accounts/index.ctp:60
+#: /views/accounts/view.ctp:50
+#: /views/categories/add.ctp:17
+#: /views/categories/edit.ctp:19
+#: /views/categories/index.ctp:52
+#: /views/categories/view.ctp:38
+#: /views/transactions/add.ctp:19
+#: /views/transactions/edit.ctp:21
+#: /views/transactions/view.ctp:51
+msgid "List Transactions"
+msgstr ""
+
+#: /views/accounts/add.ctp:22
+#: /views/accounts/edit.ctp:24
+#: /views/accounts/index.ctp:61
+#: /views/accounts/view.ctp:51;98
+#: /views/categories/add.ctp:18
+#: /views/categories/edit.ctp:20
+#: /views/categories/index.ctp:53
+#: /views/categories/view.ctp:39;84
+#: /views/transactions/index.ctp:61
+#: /views/transactions/view.ctp:52
+msgid "New Transaction"
+msgstr ""
+
+#: /views/accounts/edit.ctp:4
+#: /views/accounts/view.ctp:44
+msgid "Edit Account"
+msgstr ""
+
+#: /views/accounts/edit.ctp:19
+#: /views/accounts/index.ctp:35
+#: /views/accounts/view.ctp:89
+#: /views/banks/edit.ctp:16
+#: /views/banks/index.ctp:27
+#: /views/banks/view.ctp:68
+#: /views/categories/edit.ctp:17
+#: /views/categories/index.ctp:29
+#: /views/categories/view.ctp:75
+#: /views/transactions/edit.ctp:20
+#: /views/transactions/index.ctp:39
+#: /views/types/edit.ctp:16
+#: /views/types/index.ctp:27
+#: /views/users/edit.ctp:18
+#: /views/users/index.ctp:31
+#: /views/users/view.ctp:80
+msgid "Delete"
+msgstr ""
+
+#: /views/accounts/edit.ctp:19
+#: /views/accounts/index.ctp:35
+#: /views/accounts/view.ctp:45;89
+#: /views/banks/edit.ctp:16
+#: /views/banks/index.ctp:27
+#: /views/banks/view.ctp:30;68
+#: /views/categories/edit.ctp:17
+#: /views/categories/index.ctp:29
+#: /views/categories/view.ctp:35;75
+#: /views/transactions/edit.ctp:20
+#: /views/transactions/index.ctp:39
+#: /views/transactions/view.ctp:50
+#: /views/types/edit.ctp:16
+#: /views/types/index.ctp:27
+#: /views/types/view.ctp:30
+#: /views/users/edit.ctp:18
+#: /views/users/index.ctp:31
+#: /views/users/view.ctp:40;80
+msgid "Are you sure you want to delete # %s?"
+msgstr ""
+
+#: /views/accounts/index.ctp:2
+msgid "Accounts"
+msgstr ""
+
+#: /views/accounts/index.ctp:33
+#: /views/accounts/view.ctp:87
+#: /views/banks/index.ctp:25
+#: /views/banks/view.ctp:66
+#: /views/categories/index.ctp:27
+#: /views/categories/view.ctp:73
+#: /views/transactions/index.ctp:37
+#: /views/types/index.ctp:25
+#: /views/users/index.ctp:29
+#: /views/users/view.ctp:78
+msgid "View"
+msgstr ""
+
+#: /views/accounts/index.ctp:34
+#: /views/accounts/view.ctp:88
+#: /views/banks/index.ctp:26
+#: /views/banks/view.ctp:67
+#: /views/categories/index.ctp:28
+#: /views/categories/view.ctp:74
+#: /views/transactions/index.ctp:38
+#: /views/types/index.ctp:26
+#: /views/users/index.ctp:30
+#: /views/users/view.ctp:79
+msgid "Edit"
+msgstr ""
+
+#: /views/accounts/index.ctp:43
+#: /views/banks/index.ctp:35
+#: /views/categories/index.ctp:37
+#: /views/transactions/index.ctp:47
+#: /views/types/index.ctp:35
+#: /views/users/index.ctp:39
+msgid "Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%"
+msgstr ""
+
+#: /views/accounts/index.ctp:48
+#: /views/banks/index.ctp:40
+#: /views/categories/index.ctp:42
+#: /views/transactions/index.ctp:52
+#: /views/types/index.ctp:40
+#: /views/users/index.ctp:44
+msgid "previous"
+msgstr ""
+
+#: /views/accounts/index.ctp:51
+#: /views/banks/index.ctp:43
+#: /views/categories/index.ctp:45
+#: /views/transactions/index.ctp:55
+#: /views/types/index.ctp:43
+#: /views/users/index.ctp:47
+msgid "next"
+msgstr ""
+
+#: /views/accounts/index.ctp:57
+#: /views/accounts/view.ctp:47
+#: /views/banks/add.ctp:17
+#: /views/banks/edit.ctp:19
+#: /views/banks/index.ctp:51
+#: /views/banks/view.ctp:34;77
+#: /views/transactions/add.ctp:21
+#: /views/transactions/edit.ctp:23
+#: /views/transactions/index.ctp:63
+#: /views/transactions/view.ctp:54
+#: /views/users/add.ctp:19
+#: /views/users/edit.ctp:21
+#: /views/users/index.ctp:55
+#: /views/users/view.ctp:44;89
+msgid "New Account"
+msgstr ""
+
+#: /views/accounts/view.ctp:2
+#: /views/transactions/view.ctp:19
+msgid "Account"
+msgstr ""
+
+#: /views/accounts/view.ctp:4;59
+#: /views/banks/view.ctp:4;42
+#: /views/categories/view.ctp:4;47
+#: /views/transactions/view.ctp:4
+#: /views/types/view.ctp:4
+#: /views/users/view.ctp:4;52
+msgid "Id"
+msgstr ""
+
+#: /views/accounts/view.ctp:9;60
+#: /views/banks/view.ctp:9;43
+#: /views/categories/view.ctp:9;48
+#: /views/transactions/view.ctp:9
+#: /views/types/view.ctp:9
+#: /views/users/view.ctp:9;53
+msgid "Name"
+msgstr ""
+
+#: /views/accounts/view.ctp:14
+#: /views/banks/view.ctp:44
+#: /views/users/view.ctp:54
+msgid "Number"
+msgstr ""
+
+#: /views/accounts/view.ctp:19
+#: /views/banks/view.ctp:2
+msgid "Bank"
+msgstr ""
+
+#: /views/accounts/view.ctp:24;64
+#: /views/banks/view.ctp:14;46
+#: /views/categories/view.ctp:14;52
+#: /views/transactions/view.ctp:29
+#: /views/types/view.ctp:14
+#: /views/users/view.ctp:24;56
+msgid "Created"
+msgstr ""
+
+#: /views/accounts/view.ctp:29;65
+#: /views/banks/view.ctp:19;47
+#: /views/categories/view.ctp:19
+#: /views/transactions/view.ctp:34
+#: /views/types/view.ctp:19
+#: /views/users/view.ctp:29;57
+msgid "Modified"
+msgstr ""
+
+#: /views/accounts/view.ctp:34
+#: /views/users/view.ctp:58
+msgid "User Id"
+msgstr ""
+
+#: /views/accounts/view.ctp:45
+msgid "Delete Account"
+msgstr ""
+
+#: /views/accounts/view.ctp:55
+#: /views/categories/view.ctp:43
+msgid "Related Transactions"
+msgstr ""
+
+#: /views/accounts/view.ctp:61
+#: /views/categories/view.ctp:49
+#: /views/transactions/view.ctp:14
+msgid "Monto"
+msgstr ""
+
+#: /views/accounts/view.ctp:62
+#: /views/categories/view.ctp:50
+msgid "Account Id"
+msgstr ""
+
+#: /views/accounts/view.ctp:63
+#: /views/categories/view.ctp:51
+msgid "Category Id"
+msgstr ""
+
+#: /views/accounts/view.ctp:66
+#: /views/transactions/view.ctp:39
+msgid "Date Register"
+msgstr ""
+
+#: /views/banks/add.ctp:4
+msgid "Add Bank"
+msgstr ""
+
+#: /views/banks/edit.ctp:4
+#: /views/banks/view.ctp:29
+msgid "Edit Bank"
+msgstr ""
+
+#: /views/banks/index.ctp:2
+msgid "Banks"
+msgstr ""
+
+#: /views/banks/view.ctp:30
+msgid "Delete Bank"
+msgstr ""
+
+#: /views/banks/view.ctp:38
+#: /views/users/view.ctp:48
+msgid "Related Accounts"
+msgstr ""
+
+#: /views/banks/view.ctp:45
+#: /views/users/view.ctp:55
+msgid "Bank Id"
+msgstr ""
+
+#: /views/categories/add.ctp:4
+msgid "Add Category"
+msgstr ""
+
+#: /views/categories/add.ctp:16
+#: /views/categories/edit.ctp:18
+#: /views/categories/view.ctp:36
+#: /views/transactions/add.ctp:22
+#: /views/transactions/edit.ctp:24
+#: /views/transactions/index.ctp:64
+#: /views/transactions/view.ctp:55
+msgid "List Categories"
+msgstr ""
+
+#: /views/categories/edit.ctp:4
+#: /views/categories/view.ctp:34
+msgid "Edit Category"
+msgstr ""
+
+#: /views/categories/index.ctp:2
+msgid "Categories"
+msgstr ""
+
+#: /views/categories/index.ctp:51
+#: /views/categories/view.ctp:37
+#: /views/transactions/add.ctp:23
+#: /views/transactions/edit.ctp:25
+#: /views/transactions/index.ctp:65
+#: /views/transactions/view.ctp:56
+msgid "New Category"
+msgstr ""
+
+#: /views/categories/view.ctp:2
+#: /views/transactions/view.ctp:24
+msgid "Category"
+msgstr ""
+
+#: /views/categories/view.ctp:24
+#: /views/types/view.ctp:2
+msgid "Type"
+msgstr ""
+
+#: /views/categories/view.ctp:35
+msgid "Delete Category"
+msgstr ""
+
+#: /views/categories/view.ctp:53
+msgid "Modifed"
+msgstr ""
+
+#: /views/layouts/default.ctp:25
+msgid "CakePHP: the rapid development php framework:"
+msgstr ""
+
+#: /views/layouts/default.ctp:39;50
+msgid "CakePHP: the rapid development php framework"
+msgstr ""
+
+#: /views/pages/home.ctp:12
+msgid "Your tmp directory is writable."
+msgstr ""
+
+#: /views/pages/home.ctp:16
+msgid "Your tmp directory is NOT writable."
+msgstr ""
+
+#: /views/pages/home.ctp:26
+msgid "The %s is being used for caching. To change the config edit APP/config/core.php "
+msgstr ""
+
+#: /views/pages/home.ctp:30
+msgid "Your cache is NOT working. Please check the settings in APP/config/core.php"
+msgstr ""
+
+#: /views/pages/home.ctp:40
+msgid "Your database configuration file is present."
+msgstr ""
+
+#: /views/pages/home.ctp:45
+msgid "Your database configuration file is NOT present."
+msgstr ""
+
+#: /views/pages/home.ctp:47
+msgid "Rename config/database.php.default to config/database.php"
+msgstr ""
+
+#: /views/pages/home.ctp:64
+msgid "Cake is able to connect to the database."
+msgstr ""
+
+#: /views/pages/home.ctp:68
+msgid "Cake is NOT able to connect to the database."
+msgstr ""
+
+#: /views/pages/home.ctp:74
+msgid "Editing this Page"
+msgstr ""
+
+#: /views/pages/home.ctp:77
+msgid "To change the content of this page, edit: %s\n\t\tTo change its layout, edit: %s\n\t\tYou can also add some CSS styles for your pages at: %s"
+msgstr ""
+
+#: /views/transactions/add.ctp:4
+msgid "Add Transaction"
+msgstr ""
+
+#: /views/transactions/edit.ctp:4
+#: /views/transactions/view.ctp:49
+msgid "Edit Transaction"
+msgstr ""
+
+#: /views/transactions/index.ctp:2
+msgid "Transactions"
+msgstr ""
+
+#: /views/transactions/view.ctp:2
+msgid "Transaction"
+msgstr ""
+
+#: /views/transactions/view.ctp:50
+msgid "Delete Transaction"
+msgstr ""
+
+#: /views/types/add.ctp:4
+msgid "Add Type"
+msgstr ""
+
+#: /views/types/add.ctp:15
+#: /views/types/edit.ctp:17
+#: /views/types/view.ctp:31
+msgid "List Types"
+msgstr ""
+
+#: /views/types/edit.ctp:4
+#: /views/types/view.ctp:29
+msgid "Edit Type"
+msgstr ""
+
+#: /views/types/index.ctp:2
+msgid "Types"
+msgstr ""
+
+#: /views/types/index.ctp:49
+#: /views/types/view.ctp:32
+msgid "New Type"
+msgstr ""
+
+#: /views/types/view.ctp:30
+msgid "Delete Type"
+msgstr ""
+
+#: /views/users/add.ctp:4
+msgid "Add User"
+msgstr ""
+
+#: /views/users/add.ctp:17
+#: /views/users/edit.ctp:19
+#: /views/users/view.ctp:41
+msgid "List Users"
+msgstr ""
+
+#: /views/users/edit.ctp:4
+#: /views/users/view.ctp:39
+msgid "Edit User"
+msgstr ""
+
+#: /views/users/index.ctp:2
+msgid "Users"
+msgstr ""
+
+#: /views/users/index.ctp:53
+#: /views/users/view.ctp:42
+msgid "New User"
+msgstr ""
+
+#: /views/users/view.ctp:2
+msgid "User"
+msgstr ""
+
+#: /views/users/view.ctp:14
+msgid "Username"
+msgstr ""
+
+#: /views/users/view.ctp:19
+msgid "Full Name"
+msgstr ""
+
+#: /views/users/view.ctp:40
+msgid "Delete User"
+msgstr ""
+
+#: /webroot/test.php:88
+msgid "Debug setting does not allow access to this url."
+msgstr ""
+

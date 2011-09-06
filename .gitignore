@@ -1,0 +1,28 @@
+###
+# system SWAP, TMP and BACKUP files
+###
+
+*~
+*.swp
+*.bak
+
+###
+# Mac OS X directory preferences
+###
+.DS_Store
+
+###
+# CakePHP tmp content
+###
+/tmp/cache/models/*
+/tmp/cache/persistent/*
+/tmp/cache/views/*
+/tmp/cache/*
+/tmp/logs/*
+/tmp/session/*
+/tmp/pdf/*
+
+###
+# CakePHP database config
+###
+/config/database.php
