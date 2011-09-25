@@ -16,3 +16,25 @@ function categories_get_type(id) {
         console.log(i);
     });
 }
+
+function Account_Show_Avaliable_in_Field(account_id, field) {
+    $.ajax({
+        type: "POST",
+        url: url+"/accounts/get_avaliable_amount.json",
+        data: "account_id="+account_id,
+        success: function(result) {
+            $(field).val(result);
+        }
+    });
+}
+
+function Account_Show_Dout_in_Field(account_id, field) {
+    $.ajax({
+        type: "POST",
+        url: url+"/accounts/get_dout_amount.json",
+        data: "account_id="+account_id,
+        success: function(result){            
+            $(field).val(result);
+        }
+    });
+}
