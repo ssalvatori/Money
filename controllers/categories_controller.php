@@ -65,12 +65,23 @@ class CategoriesController extends AppController {
     }
 
     function get_by_type() {
-        Configure::write('debug',0);
+        Configure::write('debug', 0);
         $this->Category->recursive = -1;
         $categories = $this->Category->find('all', array(
-            'conditions'=> array('Category.user_id'=>$this->Auth->user('id')),
+            'conditions' => array('Category.user_id' => $this->Auth->user('id')),
             'fields' => array('id', 'type'),
-            
+                )
+        );
+        $this->set(compact('categories'));
+    }
+
+    function get_type() {
+        Configure::write('debug', 0);
+        $this->Category->recursive = -1;
+        $category_id = $this->params['url']['category_id'];
+        $categories = $this->Category->find('first', array(
+            'conditions' => array('Category.id' => $category_id),
+            'fields' => array('id', 'type'),
                 )
         );
         $this->set(compact('categories'));

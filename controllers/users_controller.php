@@ -17,7 +17,7 @@ class UsersController extends AppController {
         $this->set('user', $this->User->read(null, $id));
     }
 
-    function add() {
+    function register() {
         if (!empty($this->data)) {
             $this->User->create();
             if ($this->User->save($this->data)) {
@@ -84,7 +84,7 @@ class UsersController extends AppController {
     }
 
     function beforeFilter() {
-        $this->Auth->allow('login');
+        $this->Auth->allow('login','register');
         parent::beforeFilter();
     }
 

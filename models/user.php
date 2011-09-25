@@ -5,6 +5,26 @@ class User extends AppModel {
     var $name = 'User';
     //The Associations below have been created with all possible keys, those that are not needed can be removed
     var $displayField = 'username';
+    var $validate = array(
+        'username' => array(
+            'isUnique' => array(
+                'rule' => 'isUnique',
+                'message' => 'This username has already been taken.'
+            ),
+            'notEmpty' => array(
+                'rule' => 'notEmpty',
+                'message' => 'Enter your username'
+            )
+        ),
+        'email' => array(
+            'rule' => 'email',
+            'message' => 'Insert a valid email'
+        ),
+        'password' => array(
+            'rule' => 'notEmpty',
+            'message' => 'Insert you password'
+        )
+    );
     var $hasMany = array(
         'Account' => array(
             'className' => 'Account',
@@ -62,7 +82,6 @@ class User extends AppModel {
 
         return $this->doCalculeStatistics($accounts);
     }
-
 
 }
 

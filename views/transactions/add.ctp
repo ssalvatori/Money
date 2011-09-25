@@ -1,10 +1,8 @@
 <?php
 $this->Html->scriptBlock("
-      $(document).ready(function(){
-        categoriees_get_all();
-        
+      $(document).ready(function(){        
         $('#TransactionCategoryId').change(function() {
-            categories_get_type($(this).val());
+            category_get_type($(this).val());
         });
       });
   ", array('inline' => false));
@@ -18,6 +16,7 @@ $this->Html->scriptBlock("
         echo $this->Form->input('name');
         echo $this->Form->input('amount');
         echo $this->Form->input('category_id');
+        echo "<div id='CategoryTypeMessage'></div>";
         echo $this->Form->input('date_realized');
         echo $this->Form->input('description');
         ?>
