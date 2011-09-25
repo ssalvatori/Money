@@ -72,12 +72,11 @@ class UsersController extends AppController {
 
     function start() {
         $stats = $this->User->makeStatistics($this->Auth->user('id'));
-
-        $this->set('results',$stats);
+        $this->set('results', $stats);
     }
 
     function start_test() {
-        $accounts = $this->User->Account->find('all', array('recursive' => -1,'conditions' => array('Account.user_id' => $this->Auth->user("id"))));
+        $accounts = $this->User->Account->find('all', array('recursive' => -1, 'conditions' => array('Account.user_id' => $this->Auth->user("id"))));
 
         foreach ($accounts as $account) {
             pr($this->User->Account->get_stat($account['Account']['id']));
