@@ -30,7 +30,7 @@
         echo $this->Html->css('cake.generic');
         echo $this->Html->css('base');
         echo $this->Html->script('jquery.min.js');
-        echo $this->Html->script('base.js');
+        echo $this->Html->script('functions.js');
 
         echo $scripts_for_layout;
         ?>

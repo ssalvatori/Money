@@ -47,6 +47,34 @@ class AppModel extends Model {
         return $options;
     }
 
+    function doCalculeStatistics($InformationAccounts) {
 
+        $results = Array();
+
+        foreach ($InformationAccounts as $account) {
+
+            $incoming = 0;
+            $outgoing = 0;
+            foreach ($account['Transaction'] as $transaction) {
+
+                if (!array_key_exists('type', $transaction['Category'])) {
+                    $transaction['Category']['type'] = $account['Account']['accounttype_id'];
+                }
+
+                if ($transaction['Category']['type'] == 0) {
+                    $incoming += $transaction['amount'];
+                } elseif ($transaction['Category']['type'] == 1) {
+                    $outgoing += $transaction['amount'];
+                }
+            }
+
+            $tmp['name'] = $account['Account']['name'];
+            $tmp['incoming'] = $incoming;
+            $tmp['outgoing'] = $outgoing;
+            array_push($results, $tmp);
+        }
+        
+        return $results;
+    }
 
 }

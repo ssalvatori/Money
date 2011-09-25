@@ -55,7 +55,7 @@ class Transaction extends AppModel {
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
-        ),        
+        ),
     );
     //The Associations below have been created with all possible keys, those that are not needed can be removed
     var $belongsTo = array(
@@ -81,6 +81,53 @@ class Transaction extends AppModel {
             'order' => ''
         )
     );
+
+    function paycreditcard($AccountSource, $AccountTarget, $amount, $user_id) {
+
+        if ($this->paycreditcardSource($AccountSource, $AccountTarget, $amount, $user_id) && $this->paycreditcardTarget($AccountSource, $AccountTarget, $amount, $user_id)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function _savepayment($AccountSource, $AccountTarget, $amount, $user_id) {
+        $data['category_id'] = 0;
+        $data['name'] = "PAY CREDIT CARD";
+        $data['amount'] = $amount;
+        $data['account_id'] = $AccountSource;
+        $data['date_realized'] = date("Y-m-d");
+        $data['user_id'] = $user_id;
+        $data['description'] = $this->paycreditcarddescription($AccountSource, $AccountTarget, $amount);
+
+        $this->log($data);
+        $this->create();
+        return $this->save($data);
+    }
+
+    function paycreditcardSource($AccountSource, $AccountTarget, $amount, $user_id) {
+        return $this->_savepayment($AccountSource, $AccountTarget, $amount, $user_id);
+    }
+
+    function paycreditcardTarget($AccountSource, $AccountTarget, $amount, $user_id) {
+        return $this->_savepayment($AccountTarget, $AccountSource, $amount, $user_id);
+    }
+
+    function paycreditcarddescription($IdAccountSource, $IdAccountTarget, $amount) {
+
+        $AccountSource = $this->Account->read(null, $IdAccountSource);
+        $AccountTarget = $this->Account->read(null, $IdAccountTarget);
+        $date = date("d/m/Y");
+
+        $description = "
+        Account source: {$AccountSource["Account"]["name"]}
+        Account target: {$AccountTarget["Account"]["name"]}
+        Amoun: {$amount}
+        Date: {$date}
+        ";
+
+        return $description;
+    }
 
 }
 

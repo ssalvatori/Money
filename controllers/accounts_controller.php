@@ -18,7 +18,7 @@ class AccountsController extends AppController {
         $this->Account->Behaviors->attach('Containable');
         $this->set('account', $this->Account->find('first', array(
                     'conditions' => array('Account.id' => $id),
-                    'contain' => array('Bank', 'Transaction' => array('Category')),
+                    'contain' => array('Bank', 'Transaction' => array('Account','Category')),
                 )));
     }
 
@@ -72,6 +72,26 @@ class AccountsController extends AppController {
 
     function beforeFilter() {
         $this->set('accounttype_id', Configure::read('accounttype_id'));
+    }
+
+    function get_dout_amount() {
+        Configure::write('debug', 0);
+        $account_id = $this->params['form']['account_id'];
+
+        $this->Account->id = $account_id;
+        $dout = $this->Account->get_Dout_amount();
+
+        $this->set(compact('dout'));
+    }
+
+    function get_avaliable_amount() {
+        Configure::write('debug', 0);
+        $account_id = $this->params['form']['account_id'];
+
+        $this->Account->id = $account_id;
+        $avaliable = $this->Account->get_Avaliable_amount();
+        
+        $this->set(compact('avaliable'));
     }
 
 }

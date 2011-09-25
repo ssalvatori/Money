@@ -114,31 +114,33 @@ class Account extends AppModel {
             ),
                 )
         );
+           
+        return $this->doCalculeStatistics($results);
 
-        foreach ($results as $result) {
-            $incoming = 0;
-            $outgoing = 0;
-            foreach ($result['Transaction'] as $transaction) {
-                if ($transaction['Category']['type'] == 0) {
-                    $incoming += $transaction['amount'];
-                } elseif ($transaction['Category']['type'] == 1) {
-                    $outgoing += $transaction['amount'];
-                }
-            }
-
-            $tmp['accounttype_id'] = $result['Account']['accounttype_id'];
-            
-            if($result['Account']['accounttype_id'] == 0) {
-                $tmp['creditcard_amount'] = $result['Account']['creditcard_amount'];
-            }
-            
-            $tmp['name'] = $result['Account']['name'];
-            $tmp['incoming'] = $incoming;
-            $tmp['outgoing'] = $outgoing;
-            array_push($results, $tmp);
-            
-            return $tmp;
-        }
+//        foreach ($results as $result) {
+//            $incoming = 0;
+//            $outgoing = 0;
+//            foreach ($result['Transaction'] as $transaction) {
+//                if ($transaction['Category']['type'] == 0) {
+//                    $incoming += $transaction['amount'];
+//                } elseif ($transaction['Category']['type'] == 1) {
+//                    $outgoing += $transaction['amount'];
+//                }
+//            }
+//
+//            $tmp['accounttype_id'] = $result['Account']['accounttype_id'];
+//            
+//            if($result['Account']['accounttype_id'] == 0) {
+//                $tmp['creditcard_amount'] = $result['Account']['creditcard_amount'];
+//            }
+//            
+//            $tmp['name'] = $result['Account']['name'];
+//            $tmp['incoming'] = $incoming;
+//            $tmp['outgoing'] = $outgoing;
+//            array_push($results, $tmp);
+//            
+//            return $tmp;
+//        }
     }
     
     function get_group_by_type($user_id) {
@@ -146,22 +148,32 @@ class Account extends AppModel {
         $this->recursive = -1;
         $results = $this->find('all',array('conditions'=>array('Account.user_id'=>$user_id)));
         
-        $tmp_credit = array();
-        $tmp_debit = array();
+        $credit_account = array();
+        $debit_account = array();
         
         foreach($results as $account) {
             if($account['Account']['accounttype_id'] == 0) {
-                array_push($tmp_credit,$account);
+                array_push($credit_account,$account);
             }
             else if($account['Account']['accounttype_id'] == 1) {
-                array_push($tmp_debit,$account);
+                array_push($debit_account,$account);
             }
         }
         
+        $credit_account = Set::combine($credit_account, '{n}.Account.id', '{n}.Account.name');
+        $debit_account =  Set::combine($debit_account, '{n}.Account.id', '{n}.Account.name');
         
-        return array($tmp_credit,$tmp_debit);
+        return array($credit_account,$debit_account);
     }
 
+    function get_Dout_amount() {
+        $account_stats = $this->get_stat($this->id);
+        return abs($account_stats['0']['incoming'] - $account_stats['0']['outgoing']);
+    }
+    
+    function get_Avaliable_amount() {
+        $account_stats = $this->get_stat($this->id);
+        return abs($account_stats['0']['incoming'] - $account_stats['0']['outgoing']);
+    }
 }
-
 ?>

@@ -70,13 +70,24 @@ class TransactionsController extends AppController {
     }
 
     function paycreditcard() {
-        
-        if($this->data) {
+
+        if ($this->data) {
+            $AccountSource = $this->data['Transaction']['account_source'];
+            $AccountTarget = $this->data['Transaction']['account_target'];
+            $amount = $this->data['Transaction']['total'];
+            $user_id = $this->Auth->user('id');
+
+        if ($this->Transaction->paycreditcard($AccountSource, $AccountTarget, $amount, $user_id)) {
+                $this->Session->setFlash(__('The transaction has been saved', true));
+            } else {
+                $this->Session->setFlash(__('The transaction could not be saved. Please, try again.', true));
+            }
             
+            $this->redirect("index");
         }
 
         $accounts = $this->Transaction->Account->get_group_by_type($this->Auth->user('id'));
-        
+
         $this->set(compact('accounts'));
     }
 

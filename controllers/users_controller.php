@@ -61,7 +61,6 @@ class UsersController extends AppController {
     }
 
     function login() {
-//        pr($this->data);
         if ($this->Auth->user()) {
             $this->redirect(array("action" => 'start'));
         }
@@ -72,48 +71,9 @@ class UsersController extends AppController {
     }
 
     function start() {
-        $this->User->Account->Behaviors->attach('Containable');
+        $stats = $this->User->makeStatistics($this->Auth->user('id'));
 
-        $accounts = $this->User->Account->find('all', array(
-            'conditions' => array(
-                'Account.user_id' => $this->Auth->user('id')
-            ),
-            'contain' => array(
-                'Transaction' => array(
-                    'Category' => array(
-                        'fields' => array(
-                            'type'
-                        )
-                    ),
-                    'fields' => array(
-                        'category_id',
-                        'amount'
-                    )
-                )
-            ),
-            'fields' => array('name', 'id')
-                )
-        );
-
-        $results = Array();
-
-        foreach ($accounts as $account) {
-            $incoming = 0;
-            $outgoing = 0;
-            foreach ($account['Transaction'] as $transaction) {
-                if ($transaction['Category']['type'] == 0) {
-                    $incoming += $transaction['amount'];
-                } elseif ($transaction['Category']['type'] == 1) {
-                    $outgoing += $transaction['amount'];
-                }
-            }
-
-            $tmp['name'] = $account['Account']['name'];
-            $tmp['incoming'] = $incoming;
-            $tmp['outgoing'] = $outgoing;
-            array_push($results, $tmp);
-        }
-        $this->set(compact('results'));
+        $this->set('results',$stats);
     }
 
     function start_test() {

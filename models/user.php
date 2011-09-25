@@ -34,6 +34,36 @@ class User extends AppModel {
         )
     );
 
+    function makeStatistics($user_id) {
+        $this->Account->Behaviors->attach('Containable');
+
+        $accounts = $this->Account->find('all', array(
+            'conditions' => array(
+                'Account.user_id' => $user_id
+            ),
+            'contain' => array(
+                'Transaction' => array(
+                    'Category' => array(
+                        'fields' => array(
+                            'type'
+                        )
+                    ),
+                    'fields' => array(
+                        'category_id',
+                        'amount'
+                    )
+                )
+            ),
+            'fields' => array('name', 'id', 'accounttype_id')
+                )
+        );
+
+
+
+        return $this->doCalculeStatistics($accounts);
+    }
+
+
 }
 
 ?>
