@@ -77,17 +77,44 @@ class TransactionsController extends AppController {
             $amount = $this->data['Transaction']['total'];
             $user_id = $this->Auth->user('id');
 
-        if ($this->Transaction->paycreditcard($AccountSource, $AccountTarget, $amount, $user_id)) {
+            if ($this->Transaction->paycreditcard($AccountSource, $AccountTarget, $amount, $user_id)) {
                 $this->Session->setFlash(__('The transaction has been saved', true));
             } else {
                 $this->Session->setFlash(__('The transaction could not be saved. Please, try again.', true));
             }
-            
+
             $this->redirect("index");
         }
 
         $accounts = $this->Transaction->Account->get_group_by_type($this->Auth->user('id'));
 
+        $this->set(compact('accounts'));
+    }
+
+    function statistics() {
+        if ($this->data) {
+            $start_date = $this->data['Transaction']['date_realized'];
+            $account_id = $this->data['Transaction']['account_id'];
+            $user_id = $this->Auth->user('id');
+
+            
+            $this->Transaction->recursive = -1;
+            $transactions_results = $this->Transaction->find('all', array(
+                'conditions' => array('user_id' => $user_id,'account_id'=>$account_id,'month(date_realized)' => $start_date['month'], 'year(date_realized)' => $start_date['year']),
+                    ));
+
+            $transactions_stats = $this->Transaction->calculate_statistics($transactions_results, $user_id);
+            
+            $this->set(compact('transactions_stats'));
+            $this->set('month',$this->data['Transaction']['date_realized']['month']);
+            $this->set('year',$this->data['Transaction']['date_realized']['year']);
+            
+        }
+
+        $min = $this->Transaction->find('first', array('order' => 'month(date_realized) ASC', 'limit' => 1, 'fields' => array('year(date_realized) as year_min')));
+        $accounts = $this->Transaction->Account->find('list', array('conditions' => array('Account.user_id' => $this->Auth->user('id'))));
+
+        $this->set('min_year', $min['0']['year_min']);
         $this->set(compact('accounts'));
     }
 

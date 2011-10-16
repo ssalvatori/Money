@@ -47,15 +47,13 @@ class AppController extends Controller {
             )
         )
     );
-    var $helpers = array('Session', 'Html', 'Form', 'Number', 'Time');
-
+    var $helpers = array('Session', 'Html', 'Form', 'Number', 'Time', 'GChart');
 
     function beforeFilter() {
         //$this->Auth->authorize = 'actions';
         $this->Auth->loginError = "Error, usuario o constraseña incorrectos";
         $this->Auth->authError = "No tienes autorización para ingresar a esta área.";
         //$this->Auth->autoRedirect = true;
-
         //$this->Auth->allow('*');
     }
 

@@ -35,11 +35,12 @@
         echo $scripts_for_layout;
         ?>
     </head>
-    
+
     <script type="text/javascript">
         var url = "<?php echo Configure::read("url") ?>";
     </script>
-    
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
     <body>
         <div id="container">
             <div id="header">

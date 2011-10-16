@@ -15,7 +15,7 @@ function category_get_type(category_id) {
         data: 'category_id='+category_id,
         url: url+"/categories/get_type.json",
         success: function(result){
-            if(result.Category.type == "1") {
+            if(result.Category.type == "0") {
                 $("#CategoryTypeMessage").html("<h3>Categor type: INCOMING</h3>");
             }
             else {

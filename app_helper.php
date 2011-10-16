@@ -33,4 +33,13 @@ App::import('Helper', 'Helper', false);
  * @subpackage    cake.cake
  */
 class AppHelper extends Helper {
+    
+    function changeFormat($categories) {
+        $gchart_format = Array();
+        foreach($categories as $key => $transaction_total) {
+            array_push($gchart_format, array($key, $transaction_total));
+        }
+
+        return $gchart_format;
+    }
 }

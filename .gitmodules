@@ -1,0 +1,9 @@
+[submodule "views/helpers/cd"]
+	path = views/helpers/cd
+	url = git://github.com/cjsaylor/Google-visualization-api-cakephp.git
+[submodule "plugins/gc_helper"]
+	path = plugins/gc_helper
+	url = git://github.com/cjsaylor/Google-visualization-api-cakephp.git
+[submodule "plugins/g_chart"]
+	path = plugins/g_chart
+	url = git://github.com/cjsaylor/Google-visualization-api-cakephp.git

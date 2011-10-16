@@ -129,6 +129,38 @@ class Transaction extends AppModel {
         return $description;
     }
 
+    function calculate_statistics($transactions, $user_id) {
+
+        $transactions_by_category = Array();
+
+        foreach ($transactions as $transaction) {
+            if (!array_key_exists($transaction['Transaction']['category_id'], $transactions_by_category)) {
+                $transactions_by_category[$transaction['Transaction']['category_id']] = 0;
+            }
+
+            $transactions_by_category[$transaction['Transaction']['category_id']] += $transaction['Transaction']['amount'];
+        }
+
+        return $this->_getCategoryName($transactions_by_category, $user_id);
+    }
+
+    function _getCategoryName($transactions_by_category, $user_id) {
+
+        $this->Category->recursive = -1;
+        $categories = $this->Category->find('all', array('user_id' => $user_id));
+
+        $transactions_category_stats = Array();
+        foreach ($categories as $category) {
+            if(array_key_exists($category['Category']['id'], $transactions_by_category)) {
+                $transactions_category_stats[$category['Category']['name']] = $transactions_by_category[$category['Category']['id']];
+            } else {
+                $transactions_category_stats[$category['Category']['name']] = 0;
+            }
+        }
+
+        return $transactions_category_stats;
+    }
+
 }
 
 ?>

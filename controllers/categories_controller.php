@@ -88,5 +88,4 @@ class CategoriesController extends AppController {
     }
 
 }
-
 ?>
