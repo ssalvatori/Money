@@ -147,7 +147,7 @@ class Transaction extends AppModel {
     function _getCategoryName($transactions_by_category, $user_id) {
 
         $this->Category->recursive = -1;
-        $categories = $this->Category->find('all', array('user_id' => $user_id));
+        $categories = $this->Category->find('all', array('user_id' => $user_id,'type'=>1));
 
         $transactions_category_stats = Array();
         foreach ($categories as $category) {
