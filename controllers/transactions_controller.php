@@ -105,15 +105,17 @@ class TransactionsController extends AppController {
                     'Transaction.account_id' => $account_id,
                     'month(Transaction.date_realized)' => $start_date['month'],
                     'year(Transaction.date_realized)' => $start_date['year'],
-                    'Category.type' => $category_type
+                    'Category.type' => $category_type,
+                    'Category.user_id' => $user_id
                 ),
                 ));
-
-            $transactions_stats = $this->Transaction->calculate_statistics($transactions_results, $user_id);
+            
+            $transactions_stats = $this->Transaction->calculate_statistics($transactions_results, $user_id, $category_type);
 
             $this->set(compact('transactions_stats'));
             $this->set('month', $this->data['Transaction']['date_realized']['month']);
             $this->set('year', $this->data['Transaction']['date_realized']['year']);
+            $this->set('type_name', Category::statuses($category_type));
         }
 
         $min = $this->Transaction->find('first', array('order' => 'month(date_realized) ASC', 'limit' => 1, 'fields' => array('year(date_realized) as year_min')));

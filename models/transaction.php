@@ -129,7 +129,7 @@ class Transaction extends AppModel {
         return $description;
     }
 
-    function calculate_statistics($transactions, $user_id) {
+    function calculate_statistics($transactions, $user_id, $category_type) {
 
         $transactions_by_category = Array();
 
@@ -141,17 +141,17 @@ class Transaction extends AppModel {
             $transactions_by_category[$transaction['Transaction']['category_id']] += $transaction['Transaction']['amount'];
         }
 
-        return $this->_getCategoryName($transactions_by_category, $user_id);
+        return $this->_getCategoryName($transactions_by_category, $user_id, $category_type);
     }
 
-    function _getCategoryName($transactions_by_category, $user_id) {
+    function _getCategoryName($transactions_by_category, $user_id, $category_type) {
 
         $this->Category->recursive = -1;
-        $categories = $this->Category->find('all', array('user_id' => $user_id,'type'=>1));
+        $categories = $this->Category->find('all', array('conditions'=>array('Category.user_id' => $user_id, 'Category.type' => $category_type)));
 
         $transactions_category_stats = Array();
         foreach ($categories as $category) {
-            if(array_key_exists($category['Category']['id'], $transactions_by_category)) {
+            if (array_key_exists($category['Category']['id'], $transactions_by_category)) {
                 $transactions_category_stats[$category['Category']['name']] = $transactions_by_category[$category['Category']['id']];
             } else {
                 $transactions_category_stats[$category['Category']['name']] = 0;

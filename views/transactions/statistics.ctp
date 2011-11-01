@@ -12,7 +12,7 @@
         'label' => "Select month and year"
             )
     );
-    echo $this->Form->input('category_type',array('label'=>__('Type',true),'options' => Category::statuses()));
+    echo $this->Form->input('category_type', array('label' => __('Type', true), 'options' => Category::statuses()));
     ?>
 
     <?php echo $this->Form->end("Search"); ?>
@@ -24,14 +24,19 @@
         $data = array(
             'labels' => array(
                 array('string' => __("Categories", true)),
-                array('number' => 'amount')
+                array('number' => __('Amount', true))
             ),
             'data' => $transactions_stats_for_Gchart,
-            'title' => __("Outcoming by Category {$month} {$year}", true),
-            'type' => 'pie',
+            'title' => __("Outcoming by Category {$month} / {$year} type: {$type_name}", true),
+            'type' => 'table',
             'width' => 600,
             'height' => 400,
         );
+
+        echo $this->GChart->start('amount_categories_table');
+        echo $this->GChart->visualize('amount_categories_table', $data);
+
+        $data['type'] = 'pie';
 
         echo $this->GChart->start('amount_categories');
         echo $this->GChart->visualize('amount_categories', $data);
