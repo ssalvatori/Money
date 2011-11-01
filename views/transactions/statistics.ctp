@@ -12,6 +12,7 @@
         'label' => "Select month and year"
             )
     );
+    echo $this->Form->input('category_type',array('label'=>__('Type',true),'options' => Category::statuses()));
     ?>
 
     <?php echo $this->Form->end("Search"); ?>
