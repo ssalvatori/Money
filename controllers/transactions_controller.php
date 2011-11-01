@@ -99,16 +99,15 @@ class TransactionsController extends AppController {
             $category_type = $this->data['Transaction']['category_type'];
 
 
-           // $this->Transaction->recursive = -1;
             $this->Transaction->Behaviors->attach('Containable');
             $transactions_results = $this->Transaction->find('all', array(
-                'conditions' => array('account_id' => $account_id, 'month(date_realized)' => $start_date['month'], 'year(date_realized)' => $start_date['year']),
-                'contain' => array('Category' =>
-                    array('conditions' => array('Category.user_id' => $user_id, 'Category.type' => $category_type)
-                    )
-                )
-                    )
-            );
+                'conditions' => array(
+                    'Transaction.account_id' => $account_id,
+                    'month(Transaction.date_realized)' => $start_date['month'],
+                    'year(Transaction.date_realized)' => $start_date['year'],
+                    'Category.type' => $category_type
+                ),
+                ));
 
             $transactions_stats = $this->Transaction->calculate_statistics($transactions_results, $user_id);
 
